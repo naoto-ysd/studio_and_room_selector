@@ -13,6 +13,13 @@
   <div id="app">
     {{ message }}
     <a :href="google">リンク</a>
+    <br>
+    <a :href="book.url">{{ book.title}}</a>
+    <br>
+    <img>
+    <input v-bind="{name:formInput.name, placeholder:formInput.placeholder }">
+    <br>
+    <input v-bind="formInput">
   </div>
   <script>
     let app = new Vue({
@@ -20,7 +27,15 @@
       data(){
         return {
           message: 'Hello Vue!',
-          google: 'https://www.google.com/'
+          google: 'https://www.google.com/',
+          book: {
+            title: 'タイトル',
+            url: 'https://www.google.com/',
+          },
+          formInput: {
+            name: 'your_name',
+            placeholder: 'お名前を入力してください',
+          }
         }
       }
     })
