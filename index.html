@@ -12,13 +12,15 @@
   <a id="google_link">google_link</a>
   <div id="app">
     {{ message }}
+    <a :href="google">リンク</a>
   </div>
   <script>
     let app = new Vue({
       el: '#app', //Virtual DOM
       data(){
         return {
-          message: 'Hello Vue!'
+          message: 'Hello Vue!',
+          google: 'https://www.google.com/'
         }
       }
     })
