@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- array -->
+    <ul>
+      <li v-for="member in members">
+        {{ member }}
+      </li>
+    </ul>
+    <!-- array index-->
+    <ul>
+      <li v-for="(member, index) in members">
+        {{ index }},{{ member }}
+      </li>
+    </ul>
+  </div>
+  <script>
+    let app = new Vue({
+      el: '#app', //Virtual DOM
+      data(){
+        return {
+          members: ['A','B','C',]
+        }
+      }
+    })
+  </script>
+</body>
+</html>
