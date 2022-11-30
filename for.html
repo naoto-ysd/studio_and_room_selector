@@ -6,34 +6,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
-  <style>
-    .active{
-      border:1px solid red;
-    }
-    .text-danger{
-      color: red;
-    }
-  </style>
 </head>
 <body>
-  <div class="active text-danger">Classtest</div>
-
   <div id="app">
-    <div :style="{'font-size':fontSize}">styletest</div>
-    <div :class="{active:isActive}">styletest2</div>
+    <!-- array -->
+    <ul>
+      <li v-for="member in members">
+        {{ member }}
+      </li>
+    </ul>
+    <!-- array index-->
+    <ul>
+      <li v-for="(member, index) in members">
+        {{ index }},{{ member }}
+      </li>
+    </ul>
   </div>
-
   <script>
     let app = new Vue({
-      el: '#app',
+      el: '#app', //Virtual DOM
       data(){
-        return{
-          fontSize: '20px',
-          isActive: true
+        return {
+          members: ['A','B','C',]
         }
       }
     })
   </script>
-
 </body>
 </html>
