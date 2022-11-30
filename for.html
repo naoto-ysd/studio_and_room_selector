@@ -21,13 +21,23 @@
         {{ index }},{{ member }}
       </li>
     </ul>
+    <ul>
+      <li v-for="(value, key, index) in book">
+        {{ index }},{{ key }},{{ value }}
+      </li>
+    </ul>
   </div>
   <script>
     let app = new Vue({
       el: '#app', //Virtual DOM
       data(){
         return {
-          members: ['A','B','C',]
+          members: ['A','B','C',],
+          book:{
+            title: 'タイトル',
+            author: '著者',
+            url: 'https://github.com/naoto-ysd/vue_test',
+          }
         }
       }
     })

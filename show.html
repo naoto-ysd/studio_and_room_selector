@@ -6,23 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js"></script>
-  <style>
-    .active{
-      border:1px solid red;
-    }
-    .text-danger{
-      color: red;
-    }
-  </style>
 </head>
 <body>
-  <div class="active text-danger">Classtest</div>
-
   <div id="app">
-    <div :style="{fontSize:fontSize}">styletest</div>
-    <div :class="{active:isActive}">styletest2</div>
+  <div v-show="!isDisplay">表示</div>
   </div>
-
   <script>
     let app = new Vue({
       el: '#app', //Virtual DOM
