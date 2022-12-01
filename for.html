@@ -26,6 +26,26 @@
         {{ index }},{{ key }},{{ value }}
       </li>
     </ul>
+
+    <!-- multiple object -->
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>TitleID</th>
+          <th>author</th>
+          <th>ID</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="book in books" :key="book.id">
+          <td>{{ book.id }}</td>
+          <td>{{ book.title }}</td>
+          <td>{{ book.author }}</td>
+          <td>{{ book.url }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
   <script>
     let app = new Vue({
@@ -37,7 +57,27 @@
             title: 'タイトル',
             author: '著者',
             url: 'https://github.com/naoto-ysd/vue_test',
-          }
+          },
+          books:[
+            {
+              id: 1,
+              title: 'googlebook1',
+              author: 'googleauthor1',
+              url: 'https://github.com/naoto-ysd/vue_test'
+            },
+            {
+              id: 2,
+              title: 'googlebook2',
+              author: 'googleauthor2',
+              url: 'https://github.com/naoto-ysd/vue_test'
+            },
+            {
+              id: 3,
+              title: 'googlebook3',
+              author: 'googleauthor3',
+              url: 'https://github.com/naoto-ysd/vue_test'
+            },
+          ]
         }
       }
     })
