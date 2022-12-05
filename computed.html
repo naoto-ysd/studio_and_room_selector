@@ -35,12 +35,25 @@
         }
       },
       computed:{
-        totalPrice(){
-          console.log('computed');
-          return this.number * this.price
-        }
+        // totalPrice(){
+        //   console.log('computed');
+        //   return this.number * this.price
+        // }
+        totalPrice: app => app.number * app.price
       }
     })
+
+    console.log(this);
+    const obj = {
+      test: function(){
+        console.log(this);
+      }
+    }
+    const objArrow = {
+      test: () => {
+        console.log(this);
+      }
+    }
   </script>
 </body>
 </html>
