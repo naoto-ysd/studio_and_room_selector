@@ -17,11 +17,38 @@
       el: '#app',
       data(){
         return {
+          reactiveTest: {
+            name: 'test',
+          },
+          books:[
+            {
+              id: 1,
+              title: 'googlebook1',
+              author: 'googleauthor1',
+              url: 'https://github.com/naoto-ysd/vue_test'
+            },
+            {
+              id: 2,
+              title: 'googlebook2',
+              author: 'googleauthor2',
+              url: 'https://github.com/naoto-ysd/vue_test'
+            },
+            {
+              id: 3,
+              title: 'googlebook3',
+              author: 'googleauthor3',
+              url: 'https://github.com/naoto-ysd/vue_test'
+            },
+          ]
         }
       },
-      methods: {
-      },
       watch: {
+        books:{
+          handler(){
+            console.log('changed');
+          },
+          deep: true,
+        }
       }
     })
   </script>
