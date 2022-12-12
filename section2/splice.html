@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let obj = [
+      {id:1 , title:'title1'},
+      {id:2 , title:'title2'},
+      {id:3 , title:'title3'},
+    ];
+    // change third value
+    obj.splice(2,1,{id:4,title:'title4'});
+    console.log(obj);
+
+    // add value
+    obj.splice(3,0,{id:5,title:'title5'});
+    console.log(obj);
+  </script>
+</body>
+</html>
