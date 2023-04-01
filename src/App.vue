@@ -1,6 +1,4 @@
 <template>
-<!--  <img alt="Vue logo" src="./assets/logo.png">-->
-<!--  <HelloWorld msg="Welcome to Your Vue.js App"/>-->
   <div id="app">
     <select v-model="selectedItem">
       <option disabled value="">Select an item</option>
@@ -14,17 +12,12 @@
 </template>
 
 <script>
-import Vue from 'vue'
+import { createApp } from 'vue';
 
-// import HelloWorld from './components/HelloWorld.vue'
 export default {
-  name: 'App',
-  components: {
-    // HelloWorld
-  }
-}
+  name: 'App'
+};
 
-const { createApp } = Vue;
 const app = createApp({
   data() {
     return {
@@ -42,7 +35,6 @@ const app = createApp({
     }
   }
 });
-
 app.mount('#app');
 </script>
 
