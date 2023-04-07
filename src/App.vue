@@ -12,32 +12,35 @@
 </template>
 
 <script>
-import { createApp } from 'vue';
+import { createApp, ref } from 'vue';
 
-export default {
-  name: 'App'
-};
+const App = {
+  name: 'App',
+  setup() {
+    const items = ['新宿', '渋谷', '代官山', '秋葉原'];
+    const selectedItem = ref('');
+    const selectedItems = ref([]);
 
-const app = createApp({
-  data() {
-    return {
-      items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
-      selectedItem: '',
-      selectedItems: []
-    }
-  },
-  methods: {
-    addItem() {
-      if (this.selectedItem !== '') {
-        this.selectedItems.push(this.selectedItem);
-        this.selectedItem = '';
+    const addItem = () => {
+      if (selectedItem.value !== '') {
+        selectedItems.value.push(selectedItem.value);
+        selectedItem.value = '';
       }
     }
-  }
-});
-app.mount('#app');
-</script>
 
+    return {
+      items,
+      selectedItem,
+      selectedItems,
+      addItem
+    }
+  }
+};
+
+const app = createApp(App);
+app.mount('#app');
+
+</script>
 
 <style>
 #app {
