@@ -1,15 +1,11 @@
 module.exports = {
-  mode: 'jit',
   purge: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  darkMode: false,
+  darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
-      colors: {
-        primary: '#4F46E5',
-        secondary: '#FFC857'
-      }
-    }
+    extend: {},
   },
-  variants: {},
-  plugins: []
-};
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+}

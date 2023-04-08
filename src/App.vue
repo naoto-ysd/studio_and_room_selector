@@ -1,13 +1,12 @@
 <template>
-  <div class="flex justify-center items-center h-screen">
-    <div class="text-center">
-      <label for="fruits">スタジオ選択</label>
-      <select id="fruits" v-model="selectedFruit"
-              class="block mx-auto rounded-md border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50">
+  <div>
+    <div>
+      <label for="studios" class="text-red-500">スタジオ選択</label>
+      <select id="studios" v-model="selectedstudio">
         <option value="">Please select</option>
-        <option v-for="(fruit, index) in fruits" :key="index" :value="fruit">{{ fruit }}</option>
+        <option v-for="(studio, index) in studios" :key="index" :value="studio">{{ studio }}</option>
       </select>
-      <p v-if="selectedFruit">You selected {{ selectedFruit }}</p>
+      <p v-if="selectedstudio">You selected {{ selectedstudio }}</p>
     </div>
   </div>
 </template>
@@ -17,8 +16,8 @@ export default {
   name: 'App',
   data() {
     return {
-      fruits: ['Apple', 'Banana', 'Orange', 'Mango'],
-      selectedFruit: ''
+      studios: ['新宿', '渋谷', '秋葉原', '池袋'],
+      selectedstudio: ''
     };
   }
 };
